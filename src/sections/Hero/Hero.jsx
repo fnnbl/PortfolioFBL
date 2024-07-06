@@ -3,6 +3,7 @@ import heroImg from "../../assets/hero-img.png";
 import themeIcon from "../../assets/sun.svg";
 import linkedinIcon from "../../assets/linkedin-light.svg";
 import githubIcon from "../../assets/github-light.svg";
+import emailIcon from "../../assets/email.svg";
 
 function Hero() {
   return (
@@ -32,7 +33,14 @@ function Hero() {
           <a href='https://github.com/fnnbl' target='_blank'>
             <img src={githubIcon} alt='GitHub Icon' />
           </a>
+          <a href='mailto:blaurock.fynn@gmail.com' target='_blank'>
+            <img src={emailIcon} alt='email Icon' />
+          </a>
         </span>
+        <p>
+          Aktuell befinde ich mich in der Ausbildung zum Fachinformatiker in
+          Fachrichtung Anwendungsentwicklung
+        </p>
       </div>
     </section>
   );
