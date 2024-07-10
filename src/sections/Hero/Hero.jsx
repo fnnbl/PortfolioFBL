@@ -36,7 +36,7 @@ function Hero() {
           <br />
           Blaurock
         </h1>
-        <h2>Fachinformatiker</h2>
+        <h2>Apprentice Computer Science Expert @ Phoenix Contact</h2>
         <span>
           <a
             href='https://linkedin.com/in/fynn-blaurock-37723b218/'
@@ -51,10 +51,7 @@ function Hero() {
             <img src={emailIcon} alt='email Icon' />
           </a>
         </span>
-        <p>
-          Aktuell befinde ich mich in der Ausbildung zum Fachinformatiker in
-          Fachrichtung Anwendungsentwicklung
-        </p>
+        <p className={styles.description}></p>
         <a href={CV} download>
           <button className='hover'>Get Resume</button>
         </a>
