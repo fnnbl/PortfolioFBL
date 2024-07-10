@@ -4,8 +4,12 @@ import themeIcon from "../../assets/sun.svg";
 import linkedinIcon from "../../assets/linkedin-light.svg";
 import githubIcon from "../../assets/github-light.svg";
 import emailIcon from "../../assets/email.svg";
+import CV from "../../assets/cv_fbl.pdf";
+import { useTheme } from "../../common/ThemeContext";
 
 function Hero() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <section id='hero' className={styles.container}>
       <div className={styles.colorModeContainer}>
@@ -14,6 +18,7 @@ function Hero() {
           className={styles.colorMode}
           src={themeIcon}
           alt='Color mode Icon'
+          onClick={toggleTheme}
         />
       </div>
       <div className={styles.info}>
@@ -41,6 +46,9 @@ function Hero() {
           Aktuell befinde ich mich in der Ausbildung zum Fachinformatiker in
           Fachrichtung Anwendungsentwicklung
         </p>
+        <a href={CV} download>
+          <button className='hover'>Get Resume</button>
+        </a>
       </div>
     </section>
   );
