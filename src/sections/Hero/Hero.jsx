@@ -51,7 +51,11 @@ function Hero() {
             <img src={emailIcon} alt='email Icon' />
           </a>
         </span>
-        <p className={styles.description}></p>
+        <p className={styles.description}>
+          Nachdem ich bereits wertvolle Erfahrungen in verschiedenen Tätigkeiten
+          und Branchen sammeln durfte, absolviere ich derzeit eine Ausbildung
+          zum Fachinformatiker für Anwendungsentwicklung.
+        </p>
         <a href={CV} download>
           <button className='hover'>Get Resume</button>
         </a>
