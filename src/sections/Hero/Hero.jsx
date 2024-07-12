@@ -52,9 +52,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          Nachdem ich bereits wertvolle Erfahrungen in verschiedenen Tätigkeiten
-          und Branchen sammeln durfte, absolviere ich derzeit eine Ausbildung
-          zum Fachinformatiker für Anwendungsentwicklung.
+          Having gained valuable experience across various roles and industries, I am currently completing my apprenticeship as an computer science expert.
         </p>
         <a href={CV} download>
           <button className='hover'>Get Resume</button>
