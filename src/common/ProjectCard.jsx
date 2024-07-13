@@ -1,11 +1,11 @@
 import React from "react";
 
-function ProjectCard({ src }) {
+function ProjectCard({ src, link, h3, p }) {
   return (
-    <a href="https://github.com/fnnbl/cv_fbl" target="_blank">
+    <a href={link} target="_blank">
       <img className="hover" src={src} alt="website Project Logo" />
-      <h3>Personal Website</h3>
-      <p>Responsive Website Using ReactJs</p>
+      <h3>{h3}</h3>
+      <p>{p}</p>
     </a>
   );
 }
