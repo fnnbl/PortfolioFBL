@@ -1,6 +1,8 @@
 import styles from "./ProjectsStyles.module.css";
 import websiteProject from "../../assets/websiteProject.png";
 import taskmgmt from "../../assets/TaskManagement.png";
+import BudgetManagement from "../../assets/BudgetManagement.jpg";
+import BetterApplication from "../../assets/BetterApplication.jpg";
 import ProjectCard from "../../common/ProjectCard";
 
 function Projects() {
@@ -19,6 +21,18 @@ function Projects() {
           link="https://github.com/fnnbl/TaskManagement"
           h3="Task Management App"
           p="Simple console-based Task Management App written in C#."
+        />
+        <ProjectCard
+          src={BudgetManagement}
+          link="https://github.com/fnnbl/budgetManagement"
+          h3="Budget Management App"
+          p="This Budget Management App lets users track their monthly income and expenses."
+        />
+        <ProjectCard
+          src={BetterApplication}
+          link="https://github.com/fnnbl/BetterApplication"
+          h3="Application Helper"
+          p="This App."
         />
       </div>
     </section>
