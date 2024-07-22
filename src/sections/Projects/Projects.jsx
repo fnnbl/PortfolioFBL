@@ -1,8 +1,8 @@
 import styles from "./ProjectsStyles.module.css";
 import websiteProject from "../../assets/websiteProject.png";
 import taskmgmt from "../../assets/TaskManagement.png";
-import BudgetManagement from "../../assets/BudgetManagement.jpg";
-import BetterApplication from "../../assets/BetterApplication.jpg";
+import BudgetManagement from "../../assets/BudgetManagement.png";
+import BetterApplication from "../../assets/BetterApplication.png";
 import ProjectCard from "../../common/ProjectCard";
 
 function Projects() {
