@@ -20,11 +20,20 @@
   a:hover {
     transform: scale(1.05);
   }
+}
 
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ändere baseline zu center */
+  gap: 30px;
+}
+
+@media (min-width: 800px) {
+  /* Korrigiere die Medienabfrage-Syntax */
   .projectsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    flex-direction: column; /* Ändere row zu column */
+    align-items: center; /* Stelle sicher, dass die Ausrichtung zentriert ist */
+    padding: 0 30px;
   }
 }
