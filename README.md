@@ -1,3 +1,3 @@
 # React + Vite
 
-My CV Website
+My Portfolio Website
