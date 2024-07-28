@@ -32,7 +32,14 @@ function Projects() {
           src={BetterApplication}
           link="https://github.com/fnnbl/BetterApplication"
           h3="Application Helper"
-          p="This App."
+          p="
+            This will be my most significant project to date. The Application
+            Helper has been designed to assist young people, particularly
+            students, in managing their numerous applications, meeting
+            deadlines, and maintaining communication with relevant companies. It
+            will initially offer application tracking functionality. In the
+            future, this application will also be able to provide guidance on
+            applications and offer templates for contacting companies."
         />
       </div>
     </section>
