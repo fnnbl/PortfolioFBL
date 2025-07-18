@@ -1,13 +1,62 @@
 .cvSection {
-  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 60px 20px;
+  font-family: "Roboto Mono", monospace;
 }
 
 .title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 40px;
 }
 
-/* Sprachen-Liste */
+.section {
+  margin-bottom: 60px;
+}
+
+/* -------- Professional Experience Entries -------- */
+
+.entry {
+  margin-bottom: 2.5rem;
+}
+
+.entryPeriod {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.entryCompany {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.entryRole {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.entryDesc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* -------- Interests & Hobbies -------- */
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* -------- Languages -------- */
+
 .languages {
   list-style: none;
   padding: 0;
@@ -24,21 +73,20 @@
   margin-bottom: 0.25rem;
 }
 
-/* der Hintergrund-Track */
 .barContainer {
-  background-color: #ddd;
+  background-color: var(--footer-text-color);
   height: 0.5rem;
   border-radius: 0.25rem;
   overflow: hidden;
 }
 
-/* der gefüllte Anteil */
 .bar {
   height: 100%;
-  background-color: #3d8bfd;
+  background-color: var(--btn-color);
 }
 
-/* Download-Button */
+/* -------- Download Button -------- */
+
 .downloadButton {
   background-color: var(--btn-color);
   color: var(--btn-text-color);
@@ -48,8 +96,8 @@
   height: 50px;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
   cursor: pointer;
 }
 

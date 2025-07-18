@@ -1,5 +1,5 @@
 :root {
-  --background-color: #cccccc;
+  --background-color: #c7c7c7;
   --btn-color: #222;
   --btn-text-color: #fff;
   --project-card-bg: #ffffff00;
@@ -18,17 +18,28 @@
   --footer-text-color: #bbb;
 }
 
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 body {
   background-color: var(--background-color);
   display: flex;
   justify-content: center;
-  margin: 0 auto 60px;
+  margin: 0 auto 40px;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 200px;
 }
 
 h1,
@@ -67,7 +78,7 @@ p {
 }
 
 .sectionTitle {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .hover {
@@ -75,9 +86,6 @@ p {
 }
 
 @media (width >= 800px) {
-  #root {
-    gap: 100px;
-  }
   h1 {
     font-size: 40px;
   }
@@ -88,53 +96,16 @@ p {
   p {
     font-size: 20px;
   }
-
   .sectionTitle {
-    margin-bottom: 60px;
-  }
-
-  @media (width >= 1400px) {
-    #root {
-      gap: 200px;
-    }
-    h1 {
-      font-size: 48px;
-    }
-
-    .sectionTitle {
-      margin-bottom: 75px;
-    }
+    margin-bottom: 40px;
   }
 }
 
-@media (width >= 800px) {
-  #root {
-    gap: 100px;
-  }
+@media (width >= 1400px) {
   h1 {
-    font-size: 40px;
+    font-size: 48px;
   }
-  h2,
-  h3 {
-    font-size: 24px;
-  }
-  p {
-    font-size: 20px;
-  }
-
   .sectionTitle {
-    margin-bottom: 60px;
-  }
-
-  @media (width >= 1400px) {
-    #root {
-      gap: 200px;
-    }
-    h1 {
-      font-size: 48px;
-    }
-    .sectionTitle {
-      margin-bottom: 75px;
-    }
+    margin-bottom: 50px;
   }
 }
