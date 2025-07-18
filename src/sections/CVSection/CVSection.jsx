@@ -1,4 +1,4 @@
-import React from "react";
+import CV from "../../assets/cv_fbl.pdf";
 import styles from "./CVSection.module.css";
 
 const CVSection = () => (
@@ -73,6 +73,12 @@ const CVSection = () => (
           </div>
         </li>
       </ul>
+    </div>
+    {/* Download CV Button */}
+    <div className={styles.section}>
+      <a href={CV} download>
+        <button className={styles.downloadButton}>Get Resume</button>
+      </a>
     </div>
   </section>
 );
