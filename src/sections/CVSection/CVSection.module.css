@@ -6,3 +6,34 @@
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+/* Sprachen-Liste */
+.languages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.languageItem {
+  margin-bottom: 1rem;
+}
+
+.languageLabel {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+/* der Hintergrund-Track */
+.barContainer {
+  background-color: #ddd;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+/* der gefüllte Anteil */
+.bar {
+  height: 100%;
+  background-color: #3d8bfd;
+}
