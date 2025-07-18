@@ -6,7 +6,6 @@ import linkedinLight from "../../assets/linkedin-light.svg";
 import linkedinDark from "../../assets/linkedin-dark.svg";
 import githubLight from "../../assets/github-light.svg";
 import githubDark from "../../assets/github-dark.svg";
-import CV from "../../assets/cv_fbl.pdf";
 import { useTheme } from "../../common/ThemeContext";
 
 function Hero() {
@@ -50,9 +49,6 @@ function Hero() {
           I am currently completing my apprenticeship as an computer science
           expert.
         </p>
-        <a href={CV} download>
-          <button className="hover">Get Resume</button>
-        </a>
       </div>
     </section>
   );
