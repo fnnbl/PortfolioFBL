@@ -3,17 +3,14 @@ import styles from "./CVSection.module.css";
 
 const CVSection = () => (
   <section className={styles.cvSection} id="cv">
-    <h2 className={styles.title}>Biography</h2>
+    <h2 className={styles.title}>Professional Experience</h2>
 
     {/* Professional Experience */}
     <div className={styles.section}>
-      <h3 className={styles.subtitle}>Professional Experience</h3>
       <ul className={styles.list}>
         <li>
-          <strong>
-            Computer Science Expert (Apprenticeship)
-          </strong>
-          , Phoenix Contact GmbH & Co. KG - September 2023 to Present
+          <strong>Computer Science Expert (Apprenticeship)</strong>, Phoenix
+          Contact GmbH & Co. KG - September 2023 to Present
         </li>
         <li>
           <strong>Logistics Associate</strong>, Torwegge GmbH & Co. KG - October
@@ -59,8 +56,24 @@ const CVSection = () => (
         <strong>Sports:</strong> Basketball, running, tennis
       </p>
     </div>
-
-    {/* …weitere Sektionen wie Ausbildung, Skills etc. */}
+    {/* Languages */}
+    <div className={styles.section}>
+      <h3 className={styles.subtitle}>Languages</h3>
+      <ul className={styles.languages}>
+        <li className={styles.languageItem}>
+          <span className={styles.languageLabel}>German</span>
+          <div className={styles.barContainer}>
+            <div className={styles.bar} style={{ width: "100%" }} />
+          </div>
+        </li>
+        <li className={styles.languageItem}>
+          <span className={styles.languageLabel}>English</span>
+          <div className={styles.barContainer}>
+            <div className={styles.bar} style={{ width: "95%" }} />
+          </div>
+        </li>
+      </ul>
+    </div>
   </section>
 );
 
