@@ -11,44 +11,44 @@ const CVSection = () => {
     {
       period: "September 2023 – Present",
       company: "Phoenix Contact GmbH & Co. KG",
-      role: "Apprenticeship: Computer Science Expert",
-      description: null,
+      role: "Apprenticeship",
+      description: "Computer Science Expert"
     },
     {
       period: "October 2020 – August 2023",
       company: "Torwegge GmbH & Co. KG",
       role: "Logistics Associate",
-      description: "Shipping for the conveyor technology division",
+      description: "Shipping for the conveyor technology division"
     },
     {
       period: "August 2017 – June 2020",
       company: "Dr. August Oetker Nahrungsmittel KG",
-      role: "Apprenticeship: Food Technology Specialist",
-      description: null,
+      role: "Apprenticeship",
+      description: "Food Technology Specialist"
     },
     {
       period: "March 2017 – June 2017",
       company: "Stefan Becker Kunststofftechnik GmbH & Co. KG",
-      role: "Production Worker",
-      description: "Operation of production machinery",
+      role: "Production Associate",
+      description: "Operation of production machinery"
     },
     {
       period: "August 2016 – January 2017",
       company: "Kreissportbund Lippe e.V.",
       role: "Federal Volunteer Service",
-      description: "Planning and execution of sports programs for refugees",
+      description: "Planning and execution of sports programs for refugees"
     },
     {
       period: "January 2016 – February 2016",
       company: "Dr. August Oetker Nahrungsmittel KG",
-      role: "Intern – Food Technology Specialist",
-      description: null,
+      role: "Intern",
+      description: "Food Technology Specialist"
     },
     {
       period: "January 2014",
       company: "HBZ Brackwede",
-      role: "Intern – Office Communications Clerk",
-      description: null,
+      role: "Intern",
+      description: "Administrative Assistant"
     },
   ];
 
