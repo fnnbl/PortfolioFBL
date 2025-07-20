@@ -72,11 +72,43 @@
 
 /* -------- Interests & Hobbies -------- */
 
-.subtitle {
+.interestsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* jeweils ein Block mit linkem Akzent */
+.interestBlock {
+  border-left: 4px solid var(--btn-color);
+  padding-left: 1rem;
+}
+
+/* Block-Überschrift */
+.interestTitle {
   font-family: "Roboto Mono", monospace;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Block-Inhalt */
+.interestList {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* auf breiteren Bildschirmen nebeneinander */
+@media (min-width: 800px) {
+  .interestsGrid {
+    flex-direction: row;
+  }
+  .interestBlock {
+    flex: 1;
+  }
 }
 
 /* -------- Languages -------- */

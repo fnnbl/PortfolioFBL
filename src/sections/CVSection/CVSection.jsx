@@ -12,43 +12,43 @@ const CVSection = () => {
       period: "September 2023 – Present",
       company: "Phoenix Contact GmbH & Co. KG",
       role: "Apprenticeship",
-      description: "Computer Science Expert"
+      description: "Computer Science Expert",
     },
     {
       period: "October 2020 – August 2023",
       company: "Torwegge GmbH & Co. KG",
       role: "Logistics Associate",
-      description: "Shipping for the conveyor technology division"
+      description: "Shipping for the conveyor technology division",
     },
     {
       period: "August 2017 – June 2020",
       company: "Dr. August Oetker Nahrungsmittel KG",
       role: "Apprenticeship",
-      description: "Food Technology Specialist"
+      description: "Food Technology Specialist",
     },
     {
       period: "March 2017 – June 2017",
       company: "Stefan Becker Kunststofftechnik GmbH & Co. KG",
       role: "Production Associate",
-      description: "Operation of production machinery"
+      description: "Operation of production machinery",
     },
     {
       period: "August 2016 – January 2017",
       company: "Kreissportbund Lippe e.V.",
       role: "Federal Volunteer Service",
-      description: "Planning and execution of sports programs for refugees"
+      description: "Planning and execution of sports programs for refugees",
     },
     {
       period: "January 2016 – February 2016",
       company: "Dr. August Oetker Nahrungsmittel KG",
       role: "Intern",
-      description: "Food Technology Specialist"
+      description: "Food Technology Specialist",
     },
     {
       period: "January 2014",
       company: "HBZ Brackwede",
       role: "Intern",
-      description: "Administrative Assistant"
+      description: "Administrative Assistant",
     },
   ];
 
@@ -71,13 +71,21 @@ const CVSection = () => {
 
       <div className={styles.section}>
         <h3 className={styles.subtitle}>Interests &amp; Hobbies</h3>
-        <p>
-          <strong>Interests:</strong> Project management, software development,
-          hardware, business, traveling
-        </p>
-        <p>
-          <strong>Sports:</strong> Basketball, running, tennis
-        </p>
+        <div className={styles.interestsGrid}>
+          <div className={styles.interestBlock}>
+            <div className={styles.interestTitle}>Interests</div>
+            <div className={styles.interestList}>
+              Project management, Software development, Hardware, Business,
+              Traveling
+            </div>
+          </div>
+          <div className={styles.interestBlock}>
+            <div className={styles.interestTitle}>Sports</div>
+            <div className={styles.interestList}>
+              Basketball, Running, Tennis
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className={styles.section}>
