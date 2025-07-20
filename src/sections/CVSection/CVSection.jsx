@@ -1,7 +1,23 @@
 import React, { useRef } from "react";
 import useScrollAnimate from "../../hooks/useScrollAnimate";
-import CV from "../../assets/cv_fbl.pdf";
 import styles from "./CVSection.module.css";
+
+const LanguageBar = ({ label, percent }) => {
+  const segments = Array.from({ length: 10 }, (_, i) => i * 10 < percent);
+  return (
+    <div className={styles.langSegment}>
+      <div className={styles.langLabel}>{label}</div>
+      <div className={styles.segments}>
+        {segments.map((on, i) => (
+          <span
+            key={i}
+            className={`${styles.segment} ${on ? styles.on : ""}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const CVSection = () => {
   const ref = useRef();
@@ -90,26 +106,8 @@ const CVSection = () => {
 
       <div className={styles.section}>
         <h3 className={styles.subtitle}>Languages</h3>
-        <ul className={styles.languages}>
-          <li className={styles.languageItem}>
-            <span className={styles.languageLabel}>German</span>
-            <div className={styles.barContainer}>
-              <div className={styles.bar} style={{ width: "100%" }} />
-            </div>
-          </li>
-          <li className={styles.languageItem}>
-            <span className={styles.languageLabel}>English</span>
-            <div className={styles.barContainer}>
-              <div className={styles.bar} style={{ width: "95%" }} />
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div className={styles.section}>
-        <a href={CV} download>
-          <button className={styles.downloadButton}>Get Resume</button>
-        </a>
+        <LanguageBar label="German" percent={100} />
+        <LanguageBar label="English" percent={90} />
       </div>
     </section>
   );

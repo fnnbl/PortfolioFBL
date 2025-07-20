@@ -6,6 +6,8 @@
   --text-color: #222;
   --form-text-color: #555;
   --footer-text-color: #888;
+  --lang-seg-filled: var(--btn-color);
+  --lang-seg-empty: var(--footer-text-color);
 }
 
 [data-theme="dark"] {
@@ -16,6 +18,8 @@
   --text-color: #fff;
   --form-text-color: #fff;
   --footer-text-color: #bbb;
+  --lang-seg-filled: rgba(255, 255, 255, 1);
+  --lang-seg-empty: rgba(255, 255, 255, 0.2);
 }
 
 .scroll-animate {
