@@ -1,51 +1,58 @@
 import React, { useRef } from "react";
+import { useTheme } from "../../common/ThemeContext";
 import useScrollAnimate from "../../hooks/useScrollAnimate";
 import styles from "./ProjectsStyles.module.css";
-import websiteProject from "../../assets/websiteProject.png";
-import taskmgmt from "../../assets/TaskManagement.png";
-import BudgetManagement from "../../assets/BudgetManagement.png";
-import BetterApplication from "../../assets/BetterApplication.png";
+import websiteProjectLight from "../../assets/websiteProjectLight.svg";
+import websiteProjectDark from "../../assets/websiteProjectDark.svg";
+import budgetManagementLight from "../../assets/budgetManagementLight.svg";
+import budgetManagementDark from "../../assets/budgetManagementDark.svg";
 import ProjectCard from "../../common/ProjectCard";
 
-function Projects() {
+const projectData = [
+  {
+    srcLight: websiteProjectLight,
+    srcDark: websiteProjectDark,
+    link: "https://github.com/fnnbl/PortfolioFBL",
+    title: "Personal Website",
+    desc: "Responsive Website Using ReactJs",
+  },
+  {
+    srcLight: budgetManagementLight,
+    srcDark: budgetManagementDark,
+    link: "https://github.com/fnnbl/FinanceDashboard",
+    title: "Finance Dashboard App",
+    desc: "Track Income & Expenses",
+  },
+];
+
+export default function Projects() {
   const ref = useRef();
   useScrollAnimate(ref);
+  const { theme } = useTheme();
 
   return (
     <section
       id="projects"
       ref={ref}
-      className={`${styles.container} scroll-animate`}
+      className={`${styles.projectsSection} scroll-animate`}
     >
-      <h1 className="sectionTitle">Projects</h1>
-      <div className={styles.projectsContainer}>
-        <ProjectCard
-          src={websiteProject}
-          link="https://github.com/fnnbl/cv_fbl"
-          h3="Personal Website"
-          p="Responsive Website Using ReactJs"
-        />
-        <ProjectCard
-          src={taskmgmt}
-          link="https://github.com/fnnbl/TaskManagement"
-          h3="Task Management App"
-          p="Simple console-based Task Management App written in C#."
-        />
-        <ProjectCard
-          src={BudgetManagement}
-          link="https://github.com/fnnbl/budgetManagement"
-          h3="Budget Management App"
-          p="This Budget Management App lets users track their monthly income and expenses."
-        />
-        <ProjectCard
-          src={BetterApplication}
-          link="https://github.com/fnnbl/BetterApplication"
-          h3="Better Application"
-          p="An improved UI/UX prototype built with React."
-        />
+      <h2 className={styles.title}>Projects</h2>
+      <div className={styles.projectsGrid}>
+        {projectData.map((proj, i) => {
+          const src = theme === "light" ? proj.srcLight : proj.srcDark;
+
+          return (
+            <div key={i} className={styles.projectBlock}>
+              <ProjectCard
+                src={src}
+                link={proj.link}
+                h3={proj.title}
+                p={proj.desc}
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 }
-
-export default Projects;
