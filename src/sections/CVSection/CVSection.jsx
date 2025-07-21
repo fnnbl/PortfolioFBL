@@ -62,7 +62,7 @@ const CVSection = () => {
     },
     {
       period: "January 2014",
-      company: "HBZ Brackwede",
+      company: "Handwerksbildungszentrum Brackwede",
       role: "Intern",
       description: "Administrative Assistant",
     },
