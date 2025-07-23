@@ -8,6 +8,15 @@
   --footer-text-color: #888;
   --lang-seg-filled: var(--btn-color);
   --lang-seg-empty: var(--footer-text-color);
+
+  --root-gap-mobile: 40px;
+  --root-gap-tablet: 60px;
+  --root-gap-desktop: 100px;
+  --root-gap-wide: 140px;
+
+  --section-padding-mobile: 20px;
+  --section-padding-tablet: 40px;
+  --section-padding-desktop: 60px;
 }
 
 [data-theme="dark"] {
@@ -27,7 +36,6 @@
   transform: translateY(20px);
   transition: opacity 600ms ease-out, transform 600ms ease-out;
 }
-
 .scroll-animate.visible {
   opacity: 1;
   transform: translateY(0);
@@ -37,13 +45,18 @@ body {
   background-color: var(--background-color);
   display: flex;
   justify-content: center;
-  margin: 0 auto 40px;
+  margin: 0 auto;
+  padding-bottom: 40px;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: var(--root-gap-mobile);
+}
+
+section {
+  padding: var(--section-padding-mobile) 10px;
 }
 
 h1,
@@ -89,7 +102,32 @@ p {
   cursor: pointer;
 }
 
-@media (width >= 800px) {
+@media (min-width: 600px) {
+  #root {
+    gap: var(--root-gap-tablet);
+  }
+  section {
+    padding: var(--section-padding-tablet) 20px;
+  }
+  h2,
+  h3 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .sectionTitle {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 800px) {
+  #root {
+    gap: var(--root-gap-desktop);
+  }
+  section {
+    padding: var(--section-padding-desktop) 40px;
+  }
   h1 {
     font-size: 40px;
   }
@@ -105,11 +143,52 @@ p {
   }
 }
 
-@media (width >= 1400px) {
+@media (min-width: 1400px) {
+  #root {
+    gap: var(--root-gap-wide);
+  }
   h1 {
     font-size: 48px;
   }
   .sectionTitle {
     margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  #root {
+    gap: 20px;
+  }
+  section {
+    padding: 10px 8px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  h2,
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .hover,
+  button,
+  .downloadButton {
+    transform: scale(0.9);
+  }
+  .projectsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 600px) {
+  #root {
+    gap: 20px;
+  }
+  section {
+    padding: 10px 8px;
   }
 }
