@@ -40,7 +40,10 @@ function Hero() {
           <br />
           Blaurock
         </h1>
-        <h2>Apprentice Computer Science Expert @ Phoenix Contact</h2>
+        <h2 className={styles.subtitle}>
+          Apprentice Computer Science Expert 
+          <br />@ Phoenix Contact
+        </h2>
         <span>
           <a
             href="https://linkedin.com/in/fynn-blaurock-37723b218/"
