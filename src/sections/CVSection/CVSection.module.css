@@ -2,16 +2,10 @@
   background-color: var(--background-color);
   color: var(--text-color);
   padding: 60px 20px;
+  text-align: left;
 }
 
-.title {
-  font-family: "Rubik", sans-serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  margin-bottom: 40px;
-}
-
+.title,
 .subtitle {
   font-family: "Rubik", sans-serif;
   font-size: 2rem;
@@ -120,6 +114,15 @@
   margin-left: 0.25rem;
 }
 
+@media (min-width: 800px) {
+  .interestsGrid {
+    flex-direction: row;
+  }
+  .interestBlock {
+    flex: 1;
+  }
+}
+
 /* -------- Languages -------- */
 
 .langSegment {
@@ -147,4 +150,74 @@
 .segment.on {
   background: var(--lang-seg-filled);
   box-shadow: 0 0 2px var(--lang-seg-filled);
+}
+
+@media (max-width: 600px) {
+  /* gesamte Section */
+  .cvSection {
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .title,
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    padding: 0 0.3rem;
+  }
+
+  /* Professional Experience */
+  .entry {
+    margin-bottom: 1.1rem;
+    padding: 0 0.4rem;
+  }
+  .entryPeriod,
+  .entryCompany,
+  .entryRole {
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
+  .entryDesc {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    padding-bottom: 1.5rem;
+  }
+  .entryDesc::after {
+    left: 0.4rem;
+    width: calc(100% - 0.8rem);
+  }
+
+  /* Interests & Hobbies */
+  .interestBlock {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    padding: 0 0.3rem;
+  }
+  .interestTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .interestList {
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 10px;
+    inline-size: 30ch;
+    margin: 0 auto 0.1em;
+    text-align: center;
+  }
+
+  /* Languages */
+  .langLabel {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    padding-left: 0.4rem;
+  }
+  .segments {
+    gap: 3px;
+    padding: 0 6rem;
+    margin-bottom: 2rem;
+  }
+  .segment {
+    height: 0.3rem;
+  }
 }
