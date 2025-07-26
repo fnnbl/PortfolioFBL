@@ -50,3 +50,35 @@
 .projectsGrid .projectBlock > * {
   width: 100%;
 }
+@media (max-width: 600px) {
+  .projectsSection {
+    padding: 40px 10px;
+  }
+
+  .projectsSection .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .projectsSection .projectsGrid {
+    gap: 1.5rem;
+  }
+
+  .projectsSection .projectBlock img {
+    width: 333px;
+    height: auto;
+    border-left: none;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .projectsSection .projectBlock a {
+    font-size: 0.9rem;
+  }
+
+  .projectsSection .projectBlock > * {
+    width: 100%;
+  }
+}
