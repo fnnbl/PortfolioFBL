@@ -85,7 +85,6 @@
   font-family: "Roboto Mono", monospace;
   font-size: 1.25rem;
   line-height: 1.6;
-  border-left: 4px solid var(--btn-color);
   padding-left: 1rem;
 }
 
@@ -105,7 +104,6 @@
   bottom: 0;
   width: 2rem;
   height: 2px;
-  background-color: var(--btn-color);
 }
 
 .interestList {
@@ -199,7 +197,7 @@
   }
   .interestList {
     font-size: 0.9rem;
-    border-radius: 5px;
+    border-radius: px;
     padding: 10px;
     inline-size: 30ch;
     margin: 0 auto 0.1em;
@@ -214,7 +212,7 @@
   }
   .segments {
     gap: 3px;
-    padding: 0 6rem;
+    padding: 1 2rem;
     margin-bottom: 2rem;
   }
   .segment {

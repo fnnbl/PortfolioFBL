@@ -51,7 +51,6 @@
   width: 100%;
 }
 @media (max-width: 600px) {
-  /* Section-Padding schlanker */
   .projectsSection {
     padding: 40px 10px;
   }
