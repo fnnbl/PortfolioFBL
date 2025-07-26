@@ -92,7 +92,10 @@
 
 @media (max-width: 600px) {
   .container {
-    padding: 0 1rem;
+    padding-top: calc(env(safe-area-inset-top) + 4rem);
+    padding-right: 1rem;
+    padding-bottom: 6rem;
+    padding-left: 1rem;
   }
 
   .subtitle {
@@ -116,6 +119,6 @@
   .colorMode {
     width: 22px;
     top: -1.5rem;
-    right: 25%;
+    right: 15%;
   }
 }
