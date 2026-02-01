@@ -21,7 +21,12 @@ const LanguageBar = ({ label, percent }) => {
 
 const CVSection = () => {
   const ref = useRef();
+  const skillsRef = useRef();
+  const languagesRef = useRef();
+
   useScrollAnimate(ref);
+  useScrollAnimate(skillsRef);
+  useScrollAnimate(languagesRef);
 
   const experiences = [
     {
@@ -85,29 +90,48 @@ const CVSection = () => {
         ))}
       </div>
 
-      <div className={styles.section}>
-        <h3 className={styles.subtitle}>Interests &amp; Hobbies</h3>
-        <div className={styles.interestsGrid}>
-          <div className={styles.interestBlock}>
-            <div className={styles.interestTitle}>Interests</div>
-            <div className={styles.interestList}>
-              Project management, Software development, Hardware, Business,
-              Traveling
+      <div ref={skillsRef} className={`${styles.section} scroll-animate`}>
+        <h3 className={styles.subtitle}>Skills</h3>
+        <div className={styles.skillsGrid}>
+          <div className={styles.skillBlock}>
+            <div className={styles.skillTitle}>Softwareentwicklung</div>
+            <div className={styles.skillList}>
+              Python, FastAPI, API-Design & Datenmodellierung, SQL, asynchrone Backend-Logik, Container-basierte Anwendungen, Kubernetes, C#-Grundlagen
             </div>
           </div>
-          <div className={styles.interestBlock}>
-            <div className={styles.interestTitle}>Sports</div>
-            <div className={styles.interestList}>
-              Basketball, Running, Tennis
+          <div className={styles.skillBlock}>
+            <div className={styles.skillTitle}>Webtechnologien</div>
+            <div className={styles.skillList}>
+              HTML, CSS, JavaScript, React (Grundlagen), strukturierte UI- und Komponentenlayouts
+            </div>
+          </div>
+          <div className={styles.skillBlock}>
+            <div className={styles.skillTitle}>Qualität & Testing</div>
+            <div className={styles.skillList}>
+              Unit- und Integrationstests (pytest), ASGI-basierte API-Tests, strukturierte Teststrategien und Testdaten-Seeding
+            </div>
+          </div>
+          <div className={styles.skillBlock}>
+            <div className={styles.skillTitle}>Tooling & Systeme</div>
+            <div className={styles.skillList}>
+              Git, Docker, Dev Container, CI/CD mit GitLab, Linux-basierte Entwicklungs- und Laufzeitumgebungen
+            </div>
+          </div>
+          <div className={styles.skillBlock}>
+            <div className={styles.skillTitle}>Arbeitsweise</div>
+            <div className={styles.skillList}>
+              Strukturierte Planung von Aufgaben und Projekten, Abstimmung fachlicher und technischer Anforderungen, technische Umsetzung mit begleitenden Dokumentationen (READMEs, ADRs, Guidelines)
             </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.section}>
+      <div ref={languagesRef} className={`${styles.section} scroll-animate`}>
         <h3 className={styles.subtitle}>Languages</h3>
-        <LanguageBar label="German" percent={100} />
-        <LanguageBar label="English" percent={90} />
+        <div className={styles.languagesContainer}>
+          <LanguageBar label="German" percent={100} />
+          <LanguageBar label="English" percent={90} />
+        </div>
       </div>
     </section>
   );
