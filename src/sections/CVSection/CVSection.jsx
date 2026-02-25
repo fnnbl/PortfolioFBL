@@ -108,12 +108,6 @@ const CVSection = () => {
               Git, Docker, Dev Container, CI/CD mit GitLab, Linux-basierte Entwicklungs- und Laufzeitumgebungen
             </div>
           </div>
-          <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Arbeitsweise</div>
-            <div className={styles.skillList}>
-              Strukturierte Planung von Aufgaben und Projekten, Abstimmung fachlicher und technischer Anforderungen, technische Umsetzung mit begleitenden Dokumentationen (READMEs, ADRs, Guidelines)
-            </div>
-          </div>
         </div>
       </div>
 
