@@ -6,9 +6,6 @@
   --text-color: #222;
   --form-text-color: #555;
   --footer-text-color: #888;
-  --lang-seg-filled: var(--btn-color);
-  --lang-seg-empty: var(--footer-text-color);
-
   --root-gap-mobile: 40px;
   --root-gap-tablet: 60px;
   --root-gap-desktop: 100px;
@@ -27,8 +24,7 @@
   --text-color: #fff;
   --form-text-color: #fff;
   --footer-text-color: #bbb;
-  --lang-seg-filled: rgba(255, 255, 255, 1);
-  --lang-seg-empty: rgba(255, 255, 255, 0.2);
+
 }
 
 .scroll-animate {
