@@ -2,22 +2,13 @@ import React, { useRef } from "react";
 import useScrollAnimate from "../../hooks/useScrollAnimate";
 import styles from "./CVSection.module.css";
 
-const LanguageBar = ({ label, percent }) => {
-  const segments = Array.from({ length: 10 }, (_, i) => i * 10 < percent);
-  return (
-    <div className={styles.langSegment}>
-      <div className={styles.langLabel}>{label}</div>
-      <div className={styles.segments}>
-        {segments.map((on, i) => (
-          <span
-            key={i}
-            className={`${styles.segment} ${on ? styles.on : ""}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+const LanguageEntry = ({ name, level, description }) => (
+  <div className={styles.langEntry}>
+    <div className={styles.langName}>{name}</div>
+    <div className={styles.langLevel}>{level}</div>
+    <div className={styles.langDesc}>{description}</div>
+  </div>
+);
 
 const CVSection = () => {
   const ref = useRef();
@@ -129,8 +120,8 @@ const CVSection = () => {
       <div ref={languagesRef} className={`${styles.section} scroll-animate`}>
         <h3 className={styles.subtitle}>Languages</h3>
         <div className={styles.languagesContainer}>
-          <LanguageBar label="German" percent={100} />
-          <LanguageBar label="English" percent={90} />
+          <LanguageEntry name="German" level="C2" description="Native Speaker" />
+          <LanguageEntry name="English" level="C1" description="Professional Proficiency" />
         </div>
       </div>
     </section>
