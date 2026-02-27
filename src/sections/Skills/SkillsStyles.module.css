@@ -1,0 +1,99 @@
+.skillsSection {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 60px 20px;
+  text-align: left;
+}
+
+.title {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 25px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.skillBlock {
+  font-family: "Roboto Mono", monospace;
+  line-height: 1.7;
+  padding-left: 0.5rem;
+}
+
+.skillTitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--btn-color);
+}
+
+.skillTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 2px;
+  background: var(--btn-color);
+}
+
+.skillList {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.05rem;
+  margin-left: 0.25rem;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+@media (min-width: 900px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .skillsSection {
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skillBlock {
+    padding: 0 0.5rem;
+  }
+
+  .skillTitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .skillTitle::after {
+    width: 2rem;
+  }
+
+  .skillList {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+}

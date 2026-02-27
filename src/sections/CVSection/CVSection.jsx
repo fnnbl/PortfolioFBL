@@ -2,22 +2,9 @@ import React, { useRef } from "react";
 import useScrollAnimate from "../../hooks/useScrollAnimate";
 import styles from "./CVSection.module.css";
 
-const LanguageEntry = ({ name, level, description }) => (
-  <div className={styles.langEntry}>
-    <div className={styles.langName}>{name}</div>
-    <div className={styles.langLevel}>{level}</div>
-    <div className={styles.langDesc}>{description}</div>
-  </div>
-);
-
 const CVSection = () => {
   const ref = useRef();
-  const skillsRef = useRef();
-  const languagesRef = useRef();
-
   useScrollAnimate(ref);
-  useScrollAnimate(skillsRef);
-  useScrollAnimate(languagesRef);
 
   const experiences = [
     {
@@ -67,7 +54,6 @@ const CVSection = () => {
   return (
     <section id="cv" ref={ref} className={`${styles.cvSection} scroll-animate`}>
       <h2 className={styles.title}>Professional Experience</h2>
-
       <div className={styles.section}>
         {experiences.map((item, idx) => (
           <div key={idx} className={styles.entry}>
@@ -79,44 +65,6 @@ const CVSection = () => {
             )}
           </div>
         ))}
-      </div>
-
-      <div ref={skillsRef} className={`${styles.section} scroll-animate`}>
-        <h3 className={styles.subtitle}>Skills</h3>
-        <div className={styles.skillsGrid}>
-          <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Softwareentwicklung</div>
-            <div className={styles.skillList}>
-              Python, FastAPI, API-Design & Datenmodellierung, SQL, asynchrone Backend-Logik, Container-basierte Anwendungen, Kubernetes, C#-Grundlagen
-            </div>
-          </div>
-          <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Webtechnologien</div>
-            <div className={styles.skillList}>
-              HTML, CSS, JavaScript, React (Grundlagen), strukturierte UI- und Komponentenlayouts
-            </div>
-          </div>
-          <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Qualität & Testing</div>
-            <div className={styles.skillList}>
-              Unit- und Integrationstests (pytest), ASGI-basierte API-Tests, strukturierte Teststrategien und Testdaten-Seeding
-            </div>
-          </div>
-          <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Tooling & Systeme</div>
-            <div className={styles.skillList}>
-              Git, Docker, Dev Container, CI/CD mit GitLab, Linux-basierte Entwicklungs- und Laufzeitumgebungen
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div ref={languagesRef} className={`${styles.section} scroll-animate`}>
-        <h3 className={styles.subtitle}>Languages</h3>
-        <div className={styles.languagesContainer}>
-          <LanguageEntry name="German" level="C2" description="Native Speaker" />
-          <LanguageEntry name="English" level="C1" description="Professional Proficiency" />
-        </div>
       </div>
     </section>
   );
