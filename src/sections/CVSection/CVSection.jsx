@@ -85,27 +85,27 @@ const CVSection = () => {
         <h3 className={styles.subtitle}>Skills</h3>
         <div className={styles.skillsGrid}>
           <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Softwareentwicklung</div>
+            <div className={styles.skillTitle}>Software Development</div>
             <div className={styles.skillList}>
-              Python, FastAPI, API-Design & Datenmodellierung, SQL, asynchrone Backend-Logik, Container-basierte Anwendungen, Kubernetes, C#-Grundlagen
+              Python, FastAPI, API Design & Data Modeling, SQL, Asynchronous Backend Logic, Container-based Applications, Kubernetes, C# Basics
             </div>
           </div>
           <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Webtechnologien</div>
+            <div className={styles.skillTitle}>Web Technologies</div>
             <div className={styles.skillList}>
-              HTML, CSS, JavaScript, React (Grundlagen), strukturierte UI- und Komponentenlayouts
+              HTML, CSS, JavaScript, React Basics, Structured UI & Component Layouts
             </div>
           </div>
           <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Qualität & Testing</div>
+            <div className={styles.skillTitle}>Quality & Testing</div>
             <div className={styles.skillList}>
-              Unit- und Integrationstests (pytest), ASGI-basierte API-Tests, strukturierte Teststrategien und Testdaten-Seeding
+              Unit & Integration Tests (pytest), ASGI-based API Tests, Structured Test Strategies & Test Data Seeding
             </div>
           </div>
           <div className={styles.skillBlock}>
-            <div className={styles.skillTitle}>Tooling & Systeme</div>
+            <div className={styles.skillTitle}>Tooling & Systems</div>
             <div className={styles.skillList}>
-              Git, Docker, Dev Container, CI/CD mit GitLab, Linux-basierte Entwicklungs- und Laufzeitumgebungen
+              Git, Docker, Dev Containers, CI/CD with GitLab, Linux-based Development & Runtime Environments
             </div>
           </div>
         </div>
