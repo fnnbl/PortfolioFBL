@@ -1,0 +1,91 @@
+.languagesSection {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 60px 20px;
+  text-align: left;
+}
+
+.title {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 25px;
+}
+
+.languagesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.langEntry {
+  font-family: "Roboto Mono", monospace;
+  padding-left: 0.5rem;
+}
+
+.langName {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.3rem;
+  color: var(--btn-color);
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.langName::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 2px;
+  background: var(--btn-color);
+}
+
+.langLevel {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--btn-color);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.langDesc {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  opacity: 0.75;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .languagesSection {
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .languagesContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .langName {
+    font-size: 1rem;
+  }
+
+  .langLevel {
+    font-size: 1.2rem;
+  }
+
+  .langDesc {
+    font-size: 0.85rem;
+  }
+}
