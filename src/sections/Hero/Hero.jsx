@@ -41,7 +41,7 @@ function Hero() {
           Blaurock
         </h1>
         <h2 className={styles.subtitle}>
-          Apprentice Computer Science Expert 
+          Software Engineering Support Specialist
           <br />@ Phoenix Contact
         </h2>
         <span>
@@ -62,8 +62,9 @@ function Hero() {
         </span>
         <p className={styles.description}>
           Having gained valuable experience across various roles and industries,
-          I am currently completing my apprenticeship as a computer science
-          expert.
+          I now work as a Software Engineering Support Specialist at Phoenix
+          Contact, following the completion of my apprenticeship as a computer
+          science expert.
         </p>
       </div>
     </section>

@@ -12,7 +12,7 @@ function Contact() {
       ref={ref}
       className={`${styles.container} scroll-animate`}
     >
-      <h1 className="sectionTitle">Contact</h1>
+      <h2 className={styles.title}>Contact</h2>
       <form action="https://formspree.io/f/mwpebwae" method="POST">
         <div className="formGroup">
           <label htmlFor="name" hidden>

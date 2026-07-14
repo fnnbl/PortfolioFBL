@@ -90,10 +90,6 @@ p {
   font-weight: 300;
 }
 
-.sectionTitle {
-  margin-bottom: 20px;
-}
-
 .hover {
   cursor: pointer;
 }
@@ -111,9 +107,6 @@ p {
   }
   p {
     font-size: 18px;
-  }
-  .sectionTitle {
-    margin-bottom: 30px;
   }
 }
 
@@ -134,9 +127,6 @@ p {
   p {
     font-size: 20px;
   }
-  .sectionTitle {
-    margin-bottom: 40px;
-  }
 }
 
 @media (min-width: 1400px) {
@@ -145,9 +135,6 @@ p {
   }
   h1 {
     font-size: 48px;
-  }
-  .sectionTitle {
-    margin-bottom: 50px;
   }
 }
 

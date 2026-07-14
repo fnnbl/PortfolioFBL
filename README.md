@@ -30,17 +30,24 @@ My personal portfolio website, showcasing my CV, ongoing projects and a contact 
 
 ## Deployment
 
-### Current (Test)
-
-Used GitHub Pages (`gh-pages` package) to prototype deployments:
+The site is deployed to **GitHub Pages** via the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package — there is no CI workflow. Deploy from your machine with:
 
 ```bash
-npm run build
 npm run deploy
 ```
 
+This runs the `predeploy` script (`npm run build` → outputs to `dist/`) and then pushes the built `dist/` folder to the `gh-pages` branch, which GitHub Pages serves.
+
+- **Live URL:** https://fnnbl.github.io/PortfolioFBL
+- **Base path:** `/PortfolioFBL/` (set as `base` in `vite.config.js`) — required so assets resolve correctly under the project's Pages subpath.
+- **`homepage`** in `package.json` mirrors the live URL.
+
+Notes:
+- Because deploys are pushed manually, remember to run `npm run deploy` after merging changes you want to publish.
+- The `gh-pages` branch is generated output — don't edit it by hand.
+
 ### Future Production
-The site will use a managed host. Changes merged into `main` trigger a CI build (`npm run build`) and auto–deploy to custom domain with SSL/CDN.  
+The site may later move to a managed host, where changes merged into `main` trigger a CI build (`npm run build`) and auto–deploy to a custom domain with SSL/CDN.  
 
 ## Project Structure
 

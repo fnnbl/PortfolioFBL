@@ -28,20 +28,53 @@
   margin-bottom: 4rem;
 }
 
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Company name shown once as the group header */
+.entryCompany {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+/* Roles grouped under a company, along a minimal timeline */
+.roles {
+  padding-left: 1.4rem;
+  border-left: 1px solid var(--btn-color);
+}
+
+.role {
+  position: relative;
+  margin-bottom: 2.25rem;
+}
+
+.role:last-child {
+  margin-bottom: 0;
+}
+
+.role::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.4rem - 0.5px);
+  top: 0.45rem;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--btn-color);
+}
+
 .entryPeriod {
   font-family: "Roboto Mono", monospace;
   font-size: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0.2rem;
-}
-
-.entryCompany {
-  font-family: "Roboto Mono", monospace;
-  font-size: 1.25rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
 }
 
 .entryRole {
@@ -76,7 +109,6 @@
   opacity: 0.4;
 }
 
-
 @media (max-width: 600px) {
   /* gesamte Section */
   .cvSection {
@@ -95,25 +127,47 @@
     margin-bottom: 50px;
   }
 
-  /* Professional Experience */
+  /* Professional Experience — left-aligned so the timeline reads correctly */
   .entry {
-    margin-bottom: 1.1rem;
+    margin-bottom: 2rem;
     padding: 0 0.4rem;
+    text-align: left;
   }
+
+  .entryCompany {
+    margin-bottom: 0.9rem;
+  }
+
+  .roles {
+    padding-left: 1rem;
+  }
+
+  .role {
+    margin-bottom: 1.4rem;
+  }
+
+  .role::before {
+    left: calc(-1rem - 0.5px);
+    top: 0.3rem;
+    width: 6px;
+    height: 6px;
+  }
+
   .entryPeriod,
   .entryCompany,
   .entryRole {
     font-size: 0.9rem;
     line-height: 1.1;
   }
+
   .entryDesc {
     font-size: 0.7rem;
     line-height: 1.2;
     padding-bottom: 1.5rem;
   }
-  .entryDesc::after {
-    left: 0.4rem;
-    width: calc(100% - 0.8rem);
-  }
 
+  .entryDesc::after {
+    left: 0;
+    width: 100%;
+  }
 }
