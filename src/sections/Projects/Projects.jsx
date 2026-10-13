@@ -1,34 +1,28 @@
-import React, { useRef } from "react";
-import { useTheme } from "../../common/ThemeContext";
+import { useRef } from "react";
 import useScrollAnimate from "../../hooks/useScrollAnimate";
 import styles from "./ProjectsStyles.module.css";
-import websiteProjectLight from "../../assets/websiteProjectLight.svg";
-import websiteProjectDark from "../../assets/websiteProjectDark.svg";
-import budgetManagementLight from "../../assets/budgetManagementLight.svg";
-import budgetManagementDark from "../../assets/budgetManagementDark.svg";
 import ProjectCard from "../../common/ProjectCard";
 
 const projectData = [
   {
-    srcLight: websiteProjectLight,
-    srcDark: websiteProjectDark,
+    mark: "FB",
+    caption: "Fynn Blaurock",
     link: "https://github.com/fnnbl/PortfolioFBL",
     title: "Personal Website",
-    desc: "Responsive Website Using ReactJs",
+    desc: "Responsive portfolio built with React and Vite",
   },
   {
-    srcLight: budgetManagementLight,
-    srcDark: budgetManagementDark,
+    mark: "FD",
+    caption: "Finance Dashboard App",
     link: "https://github.com/fnnbl/FinanceDashboard",
     title: "Finance Dashboard App",
-    desc: "Track Income & Expenses",
+    desc: "Track income and expenses",
   },
 ];
 
 export default function Projects() {
   const ref = useRef();
   useScrollAnimate(ref);
-  const { theme } = useTheme();
 
   return (
     <section
@@ -36,22 +30,19 @@ export default function Projects() {
       ref={ref}
       className={`${styles.projectsSection} scroll-animate`}
     >
-      <h2 className={styles.title}>Projects</h2>
+      <h2 className="section-title">Projects</h2>
       <div className={styles.projectsGrid}>
-        {projectData.map((proj, i) => {
-          const src = theme === "light" ? proj.srcLight : proj.srcDark;
-
-          return (
-            <div key={i} className={styles.projectBlock}>
-              <ProjectCard
-                src={src}
-                link={proj.link}
-                h3={proj.title}
-                p={proj.desc}
-              />
-            </div>
-          );
-        })}
+        {projectData.map((proj) => (
+          <ProjectCard
+            key={proj.link}
+            className={styles.card}
+            mark={proj.mark}
+            caption={proj.caption}
+            link={proj.link}
+            h3={proj.title}
+            p={proj.desc}
+          />
+        ))}
       </div>
     </section>
   );
