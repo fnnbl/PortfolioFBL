@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./ScrollNavStyles.module.css";
 
 const sections = [
@@ -13,39 +13,33 @@ const sections = [
 export default function ScrollNav() {
   const [active, setActive] = useState("hero");
 
+  // A section counts as active while it crosses a thin band at 40 % viewport height
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      let current = sections[0].id;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -59% 0px" }
+    );
 
-      for (const { id } of sections) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        if (el.offsetTop - window.innerHeight * 0.4 <= scrollY) {
-          current = id;
-        }
-      }
-
-      setActive(current);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
   }, []);
 
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} aria-label="Sections">
       {sections.map(({ id, label }) => (
-        <button
+        <a
           key={id}
+          href={`#${id}`}
           className={`${styles.dot} ${active === id ? styles.active : ""}`}
-          onClick={() => scrollTo(id)}
           aria-label={label}
+          aria-current={active === id ? "location" : undefined}
           data-label={label}
         />
       ))}

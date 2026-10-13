@@ -1,84 +1,105 @@
-.projectsSection {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 60px 20px;
-}
-
-.title {
-  font-family: "Rubik", sans-serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  margin-bottom: 25px;
-}
-
 .projectsGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1rem;
 }
 
-@media (min-width: 800px) {
-  .projectsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .projectsGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.projectBlock {
-  border-left: 4px solid var(--btn-color);
-  padding-left: 1rem;
-  transition: transform 200ms ease, box-shadow 200ms ease;
-}
-
-.projectBlock:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.projectBlock a {
+/* Large monogram tile over a text block, the tile picks up the accent wash */
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--canvas);
+  box-shadow: var(--shadow-card);
   text-decoration: none;
-  text-transform: uppercase;
-  color: inherit;
-}
+  transition: border-color 200ms ease;
 
-.projectsGrid .projectBlock > * {
-  width: 100%;
-}
-@media (max-width: 600px) {
-  .projectsSection {
-    padding: 40px 10px;
+  :global(.project-tile) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--canvas-inset);
+    border-bottom: 1px solid var(--hairline);
   }
 
-  .projectsSection .title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    text-align: center;
+  :global(.project-tile)::before {
+    content: "";
+    position: absolute;
+    inset: 30% -10% -40% 35%;
+    z-index: -1;
+    background:
+      radial-gradient(50% 50% at 30% 50%, var(--mesh-b) 0%, transparent 70%),
+      radial-gradient(50% 50% at 70% 50%, var(--mesh-a) 0%, transparent 70%);
+    filter: blur(40px);
+    opacity: calc(var(--mesh-opacity) * 0.35);
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .projectsSection .projectsGrid {
-    gap: 1.5rem;
+  :global(.project-mark) {
+    font-size: clamp(3.5rem, 2rem + 5vw, 6rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    color: var(--ink);
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .projectsSection .projectBlock img {
-    width: 333px;
-    height: auto;
-    border-left: none;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
+  :global(.project-caption) {
+    font-family: var(--font-mono);
+    font-size: var(--fs-caption);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mute);
   }
 
-  .projectsSection .projectBlock a {
-    font-size: 0.9rem;
+  :global(.project-body) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: clamp(1.25rem, 2.5vw, 1.75rem);
   }
 
-  .projectsSection .projectBlock > * {
-    width: 100%;
+  h3 {
+    font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem);
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-size: var(--fs-small);
+  }
+
+  :global(.project-link) {
+    margin-top: 0.85rem;
+    color: var(--ink);
+  }
+
+  :global(.project-link) span {
+    display: inline-block;
+    color: var(--accent);
+    transition: transform 200ms ease;
+  }
+
+  &:hover {
+    border-color: var(--hairline-strong);
+  }
+
+  &:hover :global(.project-mark) {
+    transform: scale(1.04);
+  }
+
+  &:hover :global(.project-tile)::before {
+    transform: translate(-8%, -6%);
+  }
+
+  &:hover :global(.project-link) span {
+    transform: translateX(4px);
   }
 }
