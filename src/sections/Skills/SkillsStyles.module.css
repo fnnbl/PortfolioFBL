@@ -1,99 +1,75 @@
-.skillsSection {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 60px 20px;
-  text-align: left;
-}
-
-.title {
-  font-family: "Rubik", sans-serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  margin-bottom: 25px;
-}
-
-.skillsGrid {
+/* Bento: wide / narrow / narrow / wide on larger screens */
+.bento {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 1rem;
 }
 
-.skillBlock {
-  font-family: "Roboto Mono", monospace;
-  line-height: 1.7;
-  padding-left: 0.5rem;
-}
-
-.skillTitle {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
+.cell {
   position: relative;
-  padding-bottom: 0.5rem;
-  font-size: 1.3rem;
-  color: var(--btn-color);
+  overflow: hidden;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--canvas);
+  box-shadow: var(--shadow-card);
+  transition: border-color 200ms ease;
 }
 
-.skillTitle::after {
+.cell:hover {
+  border-color: var(--hairline-strong);
+}
+
+/* The lead cell picks up a faint wash of the hero mesh */
+.cell:first-child::before {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 3rem;
-  height: 2px;
-  background: var(--btn-color);
+  inset: auto -20% -60% 40%;
+  height: 120%;
+  background:
+    radial-gradient(50% 50% at 30% 50%, var(--mesh-b) 0%, transparent 70%),
+    radial-gradient(50% 50% at 70% 50%, var(--mesh-a) 0%, transparent 70%);
+  filter: blur(40px);
+  opacity: calc(var(--mesh-opacity) * 0.35);
+  pointer-events: none;
 }
 
-.skillList {
-  font-family: "Roboto Mono", monospace;
-  font-size: 1.05rem;
-  margin-left: 0.25rem;
-  color: var(--text-color);
-  line-height: 1.8;
+.cellTitle {
+  position: relative;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.1rem;
 }
 
-@media (min-width: 900px) {
-  .skillsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem 2rem;
-  }
+.tags {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-@media (max-width: 600px) {
-  .skillsSection {
-    padding: 20px 16px;
-    text-align: center;
+.tag {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  background: var(--canvas-soft);
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  line-height: 1.4;
+  color: var(--body);
+}
+
+@media (min-width: 48rem) {
+  .bento {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-
-  .skillsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .skillBlock {
-    padding: 0 0.5rem;
-  }
-
-  .skillTitle {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.3rem;
-  }
-
-  .skillTitle::after {
-    width: 2rem;
-  }
-
-  .skillList {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    text-align: left;
+  .cell:nth-child(1),
+  .cell:nth-child(4) {
+    grid-column: span 2;
   }
 }
