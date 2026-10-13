@@ -7,17 +7,24 @@ import Projects from "./sections/Projects/Projects";
 import Contact from "./sections/Contact/Contact";
 import Footer from "./sections/Footer/Footer";
 import ScrollNav from "./common/ScrollNav";
+import SiteHeader from "./common/SiteHeader";
 
 function App() {
   return (
     <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <SiteHeader />
       <ScrollNav />
-      <Hero />
-      <CVSection />
-      <Skills />
-      <Languages />
-      <Projects />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <CVSection />
+        <Skills />
+        <Languages />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </>
   );

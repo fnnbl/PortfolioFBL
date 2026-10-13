@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import useScrollAnimate from "../../hooks/useScrollAnimate";
 import styles from "./CVSection.module.css";
 
@@ -8,64 +8,117 @@ const CVSection = () => {
 
   const experiences = [
     {
-      period: "September 2023 – Present",
       company: "Phoenix Contact GmbH & Co. KG",
-      role: "Apprenticeship",
-      description: "Computer Science Expert",
+      period: "September 2023 – Present",
+      roles: [
+        {
+          period: "July 2026 – Present",
+          role: "Software Engineering Support Specialist",
+          description: "Developer Tooling & Standards for Firmware Teams",
+          highlights: [
+            {
+              name: "SBOM Automation",
+              text: "Working out how to generate reliable SBOMs for embedded firmware automatically, including AI-assisted tooling (CycloneDX, CRA)",
+            },
+            {
+              name: "Repository Standards",
+              text: "Defining a common structure for firmware repositories",
+            },
+            {
+              name: "Signal Conditioner App",
+              text: "Developing features for a device configuration app (Angular/Ionic), from new device support to usability improvements",
+            },
+          ],
+        },
+        {
+          period: "September 2023 – July 2026",
+          role: "Apprenticeship",
+          description: "Computer Science Expert",
+          highlights: [
+            {
+              name: "QA Automation",
+              text: "Automated UI testing of the PLCnext web-based management with Java/Selenium",
+            },
+            {
+              name: "E-Mobility",
+              text: "Built a Python/FastAPI backend with layered architecture and thorough test coverage",
+            },
+            {
+              name: "Final Project",
+              text: "Developed PDF data extraction for Bee360 with Python/pdfplumber (certification project)",
+            },
+          ],
+        },
+      ],
     },
     {
-      period: "October 2020 – August 2023",
       company: "Torwegge GmbH & Co. KG",
-      role: "Logistics Associate",
-      description: "Shipping for the conveyor technology division",
+      period: "October 2020 – August 2023",
+      roles: [
+        {
+          period: "October 2020 – August 2023",
+          role: "Logistics Associate",
+          description: "Shipping for the conveyor technology division",
+        },
+      ],
     },
     {
+      company: "Dr. August Oetker Nahrungsmittel KG",
       period: "August 2017 – June 2020",
-      company: "Dr. August Oetker Nahrungsmittel KG",
-      role: "Apprenticeship",
-      description: "Food Technology Specialist",
-    },
-    {
-      period: "March 2017 – June 2017",
-      company: "Stefan Becker Kunststofftechnik GmbH & Co. KG",
-      role: "Production Associate",
-      description: "Operation of production machinery",
-    },
-    {
-      period: "August 2016 – January 2017",
-      company: "Kreissportbund Lippe e.V.",
-      role: "Federal Volunteer Service",
-      description: "Planning and execution of sports programs for refugees",
-    },
-    {
-      period: "January 2016 – February 2016",
-      company: "Dr. August Oetker Nahrungsmittel KG",
-      role: "Intern",
-      description: "Food Technology Specialist",
-    },
-    {
-      period: "January 2014",
-      company: "Handwerksbildungszentrum Brackwede",
-      role: "Intern",
-      description: "Administrative Assistant",
+      roles: [
+        {
+          period: "August 2017 – June 2020",
+          role: "Apprenticeship",
+          description: "Food Technology Specialist",
+        },
+      ],
     },
   ];
 
   return (
     <section id="cv" ref={ref} className={`${styles.cvSection} scroll-animate`}>
-      <h2 className={styles.title}>Professional Experience</h2>
-      <div className={styles.section}>
-        {experiences.map((item, idx) => (
-          <div key={idx} className={styles.entry}>
-            <div className={styles.entryPeriod}>{item.period}</div>
-            <div className={styles.entryCompany}>{item.company}</div>
-            <div className={styles.entryRole}>{item.role}</div>
-            {item.description && (
-              <div className={styles.entryDesc}>{item.description}</div>
-            )}
-          </div>
+      <h2 className="section-title">Professional Experience</h2>
+      <ol className={styles.companies}>
+        {experiences.map((company) => (
+          <li
+            key={company.company}
+            className={`${styles.company} ${
+              company.period.endsWith("Present") ? styles.current : ""
+            }`}
+          >
+            <h3 className={styles.companyName}>{company.company}</h3>
+            <ol className={styles.roles}>
+              {company.roles.map((item) => (
+                <li key={item.period} className={styles.role}>
+                  <div>
+                    <h4 className={styles.roleTitle}>{item.role}</h4>
+                    {item.description && (
+                      <p className={styles.roleDesc}>{item.description}</p>
+                    )}
+                    {item.highlights && (
+                      <ul className={styles.highlights}>
+                        {item.highlights.map((h) => (
+                          <li key={h.name} className={styles.highlight}>
+                            <h5 className={styles.highlightName}>{h.name}</h5>
+                            <p>{h.text}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <span
+                    className={`meta ${styles.rolePeriod} ${
+                      item.period.endsWith("Present") ? styles.live : ""
+                    }`}
+                  >
+                    {item.period}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 };
