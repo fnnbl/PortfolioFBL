@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import useScrollAnimate from "../../hooks/useScrollAnimate";
 import styles from "./ContactStyles.module.css";
 
@@ -12,44 +12,58 @@ function Contact() {
       ref={ref}
       className={`${styles.container} scroll-animate`}
     >
-      <h2 className={styles.title}>Contact</h2>
-      <form action="https://formspree.io/f/mwpebwae" method="POST">
-        <div className="formGroup">
-          <label htmlFor="name" hidden>
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            required
-          />
+      <div className={styles.intro}>
+        <h2 className="section-title">Contact</h2>
+        <p>
+          Questions, opportunities or feedback? Send me a message and I will
+          get back to you.
+        </p>
+      </div>
+      <form
+        className={styles.form}
+        action="https://formspree.io/f/mwpebwae"
+        method="POST"
+      >
+        <div className={styles.row}>
+          <div className={styles.group}>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className={styles.field}
+              autoComplete="name"
+              placeholder="Your name…"
+              required
+            />
+          </div>
+          <div className={styles.group}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className={styles.field}
+              autoComplete="email"
+              spellCheck={false}
+              placeholder="you@example.com…"
+              required
+            />
+          </div>
         </div>
-        <div className="formGroup">
-          <label htmlFor="email" hidden>
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="message" hidden>
-            Message
-          </label>
+        <div className={styles.group}>
+          <label htmlFor="message">Message</label>
           <textarea
             name="message"
             id="message"
-            placeholder="Message"
+            className={styles.field}
+            placeholder="What would you like to talk about…"
             required
           ></textarea>
         </div>
-        <input className="hover btn" type="submit" value="Submit" />
+        <button className={`btn btn-primary ${styles.submit}`} type="submit">
+          Send Message
+        </button>
       </form>
     </section>
   );
