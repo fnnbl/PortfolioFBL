@@ -1,58 +1,70 @@
 .nav {
   position: fixed;
-  right: 24px;
+  right: clamp(1rem, 2vw, 2rem);
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
+  z-index: 90;
+  display: none;
   flex-direction: column;
-  gap: 18px;
-  z-index: 100;
+  gap: 0.25rem;
 }
 
+/* 24px hit target around a 6px dot */
 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid var(--text-color);
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
   position: relative;
-  transition: transform 300ms ease, background 300ms ease, opacity 300ms ease;
-  opacity: 0.4;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
 }
 
-.dot.active {
-  background: var(--text-color);
+.dot::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dot);
+  transition: background-color 300ms ease, transform 300ms ease;
+}
+
+.dot:hover::after {
+  background: var(--mute);
+}
+
+.dot.active::after {
+  background: var(--accent);
   transform: scale(1.35);
-  opacity: 1;
 }
 
 .dot::before {
   content: attr(data-label);
   position: absolute;
-  right: 20px;
+  right: 28px;
   top: 50%;
-  transform: translateY(-50%);
-  font-family: "Roboto Mono", monospace;
-  font-size: 12px;
-  color: var(--text-color);
+  transform: translate(4px, -50%);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-sm);
+  background: var(--canvas);
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  color: var(--ink);
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease, transform 200ms ease;
   pointer-events: none;
 }
 
-.dot:hover {
+.dot:hover::before,
+.dot:focus-visible::before {
   opacity: 1;
+  transform: translate(0, -50%);
 }
 
-.dot:hover::before {
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
+/* Only where the gutter is wide enough to keep the dots clear of content */
+@media (min-width: 75rem) {
   .nav {
-    display: none;
+    display: flex;
   }
 }

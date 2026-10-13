@@ -1,7 +1,30 @@
 .container {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 2rem 2.5rem;
+  border-top: 1px solid var(--hairline);
+
   p {
-    font-size: 16px;
-    color: var(--footer-text-color);
+    font-size: var(--fs-small);
+    color: var(--mute);
+  }
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    font-size: var(--fs-small);
+    color: var(--mute);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  a:hover {
+    color: var(--ink);
   }
 }
