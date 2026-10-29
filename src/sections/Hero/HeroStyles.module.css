@@ -49,29 +49,10 @@
   gap: 0.75rem;
 }
 
-/* Portrait on top of the brand mesh gradient, the page's only decoration */
+/* Portrait, the page's only image */
 .visual {
   grid-area: visual;
-  position: relative;
   justify-self: start;
-  isolation: isolate;
-}
-
-.visual::before {
-  content: "";
-  position: absolute;
-  inset: -14%;
-  z-index: -1;
-  background:
-    radial-gradient(40% 45% at 22% 30%, var(--mesh-b) 0%, color-mix(in srgb, var(--mesh-b) 55%, transparent) 30%, color-mix(in srgb, var(--mesh-b) 18%, transparent) 52%, transparent 72%),
-    radial-gradient(45% 45% at 78% 25%, var(--mesh-a) 0%, color-mix(in srgb, var(--mesh-a) 55%, transparent) 30%, color-mix(in srgb, var(--mesh-a) 18%, transparent) 52%, transparent 72%),
-    radial-gradient(45% 50% at 70% 80%, var(--mesh-d) 0%, color-mix(in srgb, var(--mesh-d) 55%, transparent) 30%, color-mix(in srgb, var(--mesh-d) 18%, transparent) 52%, transparent 72%),
-    radial-gradient(40% 40% at 25% 78%, var(--mesh-c) 0%, color-mix(in srgb, var(--mesh-c) 55%, transparent) 30%, color-mix(in srgb, var(--mesh-c) 18%, transparent) 52%, transparent 72%);
-  /* eased stops: a linear fade to transparent leaves a visible rim even
-     after blurring */
-  filter: blur(56px);
-  opacity: calc(var(--mesh-opacity) * 0.45);
-  transition: opacity 300ms ease;
 }
 
 .portrait {

@@ -80,12 +80,7 @@ const CVSection = () => {
       <h2 className="section-title">Professional Experience</h2>
       <ol className={styles.companies}>
         {experiences.map((company) => (
-          <li
-            key={company.company}
-            className={`${styles.company} ${
-              company.period.endsWith("Present") ? styles.current : ""
-            }`}
-          >
+          <li key={company.company} className={styles.company}>
             <h3 className={styles.companyName}>{company.company}</h3>
             <ol className={styles.roles}>
               {company.roles.map((item) => (

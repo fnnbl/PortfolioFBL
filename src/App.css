@@ -1,4 +1,5 @@
-/* Design tokens: Vercel-style type and surfaces, a blue → cyan accent.
+/* Design tokens: Vercel-style type and surfaces, monochrome throughout:
+   active and focus states use the ink colour instead of an accent.
    Light mode is designed on its own terms: white cards lifted off a cool
    grey canvas by a firm border + shadow (dark mode separates surfaces by
    lightness instead), so outlines get their own --border token. */
@@ -18,15 +19,7 @@
   --header-bg: rgb(236 239 243 / 0.85);
   --shadow-card: 0 1px 2px rgb(16 24 40 / 0.08),
     0 2px 6px -2px rgb(16 24 40 / 0.08), 0 14px 32px -16px rgb(16 24 40 / 0.26);
-  --mesh-opacity: 0.8; /* washes read weaker on white than on black */
-
-  --accent: #0a62d8;
-  --accent-2: #06aed4;
-  --accent-soft: rgb(10 98 216 / 0.08);
-  --mesh-a: #2563eb;
-  --mesh-b: #06b6d4;
-  --mesh-c: #60a5fa;
-  --mesh-d: #22d3ee;
+  --ring: rgb(11 13 18 / 0.12); /* soft halo around focused fields */
   color-scheme: light;
 
   --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -67,11 +60,7 @@
   --on-ink: #0a0a0b;
   --header-bg: rgb(10 10 11 / 0.75);
   --shadow-card: inset 0 1px 0 rgb(255 255 255 / 0.03);
-  --mesh-opacity: 0.2;
-
-  --accent: #4593ff;
-  --accent-2: #22d3ee;
-  --accent-soft: rgb(69 147 255 / 0.1);
+  --ring: rgb(237 237 239 / 0.14);
   color-scheme: dark;
 }
 
@@ -98,13 +87,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: clip; /* hero glow may bleed past the viewport edge */
+  overflow-x: clip;
   transition: background-color 300ms ease, color 300ms ease;
 }
 
 ::selection {
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--ink);
+  color: var(--on-ink);
 }
 
 #root {
@@ -241,7 +230,7 @@ img {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
 

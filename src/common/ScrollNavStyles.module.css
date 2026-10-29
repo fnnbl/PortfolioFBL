@@ -32,7 +32,7 @@
 }
 
 .dot.active::after {
-  background: var(--accent);
+  background: var(--ink);
   transform: scale(1.35);
 }
 
