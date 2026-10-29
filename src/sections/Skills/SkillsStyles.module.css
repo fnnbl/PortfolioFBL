@@ -20,20 +20,6 @@
   border-color: var(--hairline-strong);
 }
 
-/* The lead cell picks up a faint wash of the hero mesh */
-.cell:first-child::before {
-  content: "";
-  position: absolute;
-  inset: auto -20% -60% 40%;
-  height: 120%;
-  background:
-    radial-gradient(50% 50% at 30% 50%, var(--mesh-b) 0%, transparent 70%),
-    radial-gradient(50% 50% at 70% 50%, var(--mesh-a) 0%, transparent 70%);
-  filter: blur(40px);
-  opacity: calc(var(--mesh-opacity) * 0.35);
-  pointer-events: none;
-}
-
 .cellTitle {
   position: relative;
   font-size: var(--fs-body);

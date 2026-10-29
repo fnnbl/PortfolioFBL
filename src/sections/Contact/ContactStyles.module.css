@@ -35,7 +35,7 @@
   }
 }
 
-/* Filled fields whose bottom edge lights up in the accent on focus */
+/* Filled fields whose bottom edge switches to ink on focus */
 .field {
   width: 100%;
   min-height: 3rem;
@@ -60,8 +60,8 @@
 
 .field:focus-visible {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px var(--ring);
 }
 
 textarea.field {
